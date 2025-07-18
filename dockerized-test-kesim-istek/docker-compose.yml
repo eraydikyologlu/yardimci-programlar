@@ -6,19 +6,46 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: yardimci-program-container
+    ports:
+      # Flask API için 7001 portunu expose et
+      - "7001:7001"
     volumes:
       # Çıktı dosyalarının host makineye kaydedilmesi için volume
       - ./output:/app/output
       # Geliştirme sırasında kod değişikliklerinin yansıtılması için (isteğe bağlı)
       - .:/app
     environment:
-      # Gerekli ortam değişkenleri buraya eklenebilir
+      # Gerekli ortam değişkenleri
       - PYTHONUNBUFFERED=1
-    # Script parametreleri burada belirtilebilir
-    # Örnek: command: ["123"] # book_id = 123
-    # Varsayılan olarak --help gösterilir
+      - FLASK_ENV=production
+    # Flask uygulamasını çalıştır
+    command: ["python", "test-kesim-istek-at.py"]
     networks:
       - yardimci-network
+
+  # Development için ayrı servis
+  yardimci-program-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: yardimci-program-dev-container
+    ports:
+      # Development için 7001 portunu expose et
+      - "7001:7001"
+    volumes:
+      # Geliştirme için tüm kodu mount et
+      - .:/app
+      - ./output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+      - FLASK_ENV=development
+    # Development modunda bash açık kalsın
+    stdin_open: true
+    tty: true
+    networks:
+      - yardimci-network
+    profiles:
+      - dev
 
   # İsteğe bağlı: Log analizi için container
   # logs-viewer:
