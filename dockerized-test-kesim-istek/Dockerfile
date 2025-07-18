@@ -19,9 +19,8 @@ COPY . .
 # Çıktı dizinini oluştur
 RUN mkdir -p /app/output
 
-# Python scriptinin çalıştırılması için varsayılan komut
-# Kullanım: docker run <image_name> <book_id>
-ENTRYPOINT ["python", "test-kesim-istek-at.py"]
+# Flask API için 7001 portunu expose et
+EXPOSE 7001
 
-# Varsayılan parametre (isteğe bağlı)
-CMD ["--help"] 
+# Flask uygulamasını çalıştır
+CMD ["python", "test-kesim-istek-at.py"] 

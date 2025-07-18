@@ -29,5 +29,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Çıktı dizinini oluştur
 RUN mkdir -p /app/output
 
+# Flask API için 7001 portunu expose et
+EXPOSE 7001
+
 # Geliştirme ortamı için bash'i varsayılan yap
+# Flask uygulamasını çalıştırmak için: python test-kesim-istek-at.py
 CMD ["/bin/bash"] 
