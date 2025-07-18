@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  yardimci-program:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yardimci-program-container
+    volumes:
+      # Çıktı dosyalarının host makineye kaydedilmesi için volume
+      - ./output:/app/output
+      # Geliştirme sırasında kod değişikliklerinin yansıtılması için (isteğe bağlı)
+      - .:/app
+    environment:
+      # Gerekli ortam değişkenleri buraya eklenebilir
+      - PYTHONUNBUFFERED=1
+    # Script parametreleri burada belirtilebilir
+    # Örnek: command: ["123"] # book_id = 123
+    # Varsayılan olarak --help gösterilir
+    networks:
+      - yardimci-network
+
+  # İsteğe bağlı: Log analizi için container
+  # logs-viewer:
+  #   image: nginx:alpine
+  #   container_name: logs-viewer
+  #   ports:
+  #     - "8080:80"
+  #   volumes:
+  #     - ./logs:/usr/share/nginx/html
+  #   networks:
+  #     - yardimci-network
+
+networks:
+  yardimci-network:
+    driver: bridge
+
+volumes:
+  output_data:
+    driver: local 
