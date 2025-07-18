@@ -1,8 +1,22 @@
+from flask import Flask, request, jsonify
 import requests
 import json
-import sys
 
-def mark_acquisition(book_id):
+app = Flask(__name__)
+
+@app.route('/mark-acquisition', methods=['GET'])
+def mark_acquisition_api():
+    # Query parametresinden book_id alınıyor
+    book_id = request.args.get('book_id')
+    
+    if not book_id:
+        return jsonify({"error": "book_id parametresi gerekli"}), 400
+    
+    try:
+        book_id = int(book_id)
+    except ValueError:
+        return jsonify({"error": "book_id bir tam sayı olmalıdır"}), 400
+    
     # API URL ve header bilgileri
     url = "https://api.yayincilik.net/api/v1/Books/books/{}/acquisition-marking"
     headers = {
@@ -15,6 +29,7 @@ def mark_acquisition(book_id):
 
     confidences = [0.97]
     failed_books = []
+    successful_books = []
 
     for conf in confidences:
         print(f"Gönderilen istek: bookId={book_id}, confidence={conf}")
@@ -30,6 +45,11 @@ def mark_acquisition(book_id):
 
         if response.status_code == 200:
             print(f"Başarılı: bookId {book_id}:", response.json())
+            successful_books.append({
+                "bookId": book_id,
+                "confidence": conf,
+                "response": response.json()
+            })
         else:
             print(f"Hata: bookId {book_id}:", response.status_code, response.text)
             failed_books.append({
@@ -39,23 +59,31 @@ def mark_acquisition(book_id):
                 "error_message": response.text,
             })
 
+    # API yanıtını hazırla
+    result = {
+        "bookId": book_id,
+        "total_attempts": len(confidences),
+        "successful_attempts": len(successful_books),
+        "failed_attempts": len(failed_books)
+    }
+    
+    if successful_books:
+        result["successful_results"] = successful_books
+        
     if failed_books:
+        result["failed_results"] = failed_books
+        # Başarısız sonuçları dosyaya da kaydet
         with open("failed_books.json", "w", encoding="utf-8") as f:
             json.dump(failed_books, f, indent=2, ensure_ascii=False)
-        print(f"\n{len(failed_books)} kitap başarısız oldu. 'failed_books.json' dosyasına kaydedildi.")
-    else:
-        print("\nTüm işlemler başarıyla tamamlandı.")
 
-# Komut satırından kitap ID alınıyor
+    # Başarılı varsa 200, hepsi başarısızsa 500
+    status_code = 200 if successful_books else 500
+    
+    return jsonify(result), status_code
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy", "message": "API çalışıyor"}), 200
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Kullanım: python script.py <book_id>")
-        sys.exit(1)
-
-    try:
-        book_id_input = int(sys.argv[1])
-    except ValueError:
-        print("Hata: book_id bir tam sayı olmalıdır.")
-        sys.exit(1)
-
-    mark_acquisition(book_id_input)
+    app.run(debug=True, host='0.0.0.0', port=7001)
