@@ -1,0 +1,45 @@
+# Git dosyaları
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# IDE dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Log dosyaları
+*.log
+
+# Test dosyaları
+.pytest_cache/
+.coverage
+.tox/
+
+# Temporary dosyalar
+*.tmp
+*.temp
+
+# Docker dosyaları
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Documentation
+README.md
+*.md 

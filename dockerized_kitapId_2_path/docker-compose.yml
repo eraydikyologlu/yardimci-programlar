@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  kitap-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: kitap-api
+    ports:
+      - "5010:5010"
+    environment:
+      - FLASK_DEBUG=true
+      - SECRET_KEY=dev-secret-key-change-in-production
+      - DB_SERVER=${DB_SERVER:-sql.impark.local}
+      - DB_USER=${DB_USER:-enes.karatas}
+      - DB_PASSWORD=${DB_PASSWORD:-Exkaratas2021!*}
+      - DB_DATABASE=${DB_DATABASE:-olcme_db}
+      - LOG_LEVEL=INFO
+    volumes:
+      # Development için kod değişikliklerini hot-reload için
+      - ./:/app
+      # Cache klasörlerini hariç tut
+      - /app/__pycache__
+    restart: unless-stopped
+    networks:
+      - kitap-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5010/api/books/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  kitap-network:
+    driver: bridge 

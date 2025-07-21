@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  kitap-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: kitap-api-prod
+    ports:
+      - "5010:5010"
+    environment:
+      - FLASK_DEBUG=false
+      - SECRET_KEY=${SECRET_KEY}
+      - DB_SERVER=${DB_SERVER}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+      - LOG_LEVEL=${LOG_LEVEL:-WARNING}
+    restart: always
+    networks:
+      - kitap-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5010/api/books/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Güvenlik sınırlamaları
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+
+networks:
+  kitap-network:
+    driver: bridge 
