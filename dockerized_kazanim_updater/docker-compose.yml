@@ -1,5 +1,3 @@
-version: '3.11'
-
 services:
   kazanim-updater-api:
     build: .
@@ -7,20 +5,22 @@ services:
     ports:
       - "7002:7002"
     environment:
-      - MSSQL_SERVER=${MSSQL_SERVER}
-      - MSSQL_USER=${MSSQL_USER}
-      - MSSQL_PASSWORD=${MSSQL_PASSWORD}
-      - MSSQL_DATABASE=${MSSQL_DATABASE}
-      - ES_HOST=${ES_HOST}
-      - ES_USER=${ES_USER}
-      - ES_PASSWORD=${ES_PASSWORD}
-      - ES_INDEX=${ES_INDEX}
-      - API_HOST=${API_HOST}
-      - API_PORT=${API_PORT}
-      - MODEL_API_URL=${MODEL_API_URL}
-      - MODEL_API_KEY=${MODEL_API_KEY}
+      - MSSQL_SERVER=${MSSQL_SERVER:-sql.impark.local}
+      - MSSQL_USER=${MSSQL_USER:-enes.karatas}
+      - MSSQL_PASSWORD=${MSSQL_PASSWORD:-Exkaratas2021!*}
+      - MSSQL_DATABASE=${MSSQL_DATABASE:-olcme_db}
+      - ES_HOST=${ES_HOST:-http://elastic.dijidemi.com:80}
+      - ES_USER=${ES_USER:-elastic}
+      - ES_PASSWORD=${ES_PASSWORD:-123654-}
+      - ES_INDEX=${ES_INDEX:-question_bank}
+      - API_HOST=${API_HOST:-0.0.0.0}
+      - API_PORT=${API_PORT:-7002}
+      - MODEL_API_URL=${MODEL_API_URL:-http://bcaicpu.impark.local:5005/api/kazanim_isaretleme}
+      - MODEL_API_KEY=${MODEL_API_KEY:-rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ}
     extra_hosts:
       - "elastic.dijidemi.com:172.17.3.31"
+      - "sql.impark.local:172.17.3.31"
+      - "bcaicpu.impark.local:172.17.3.31"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:7002/health"]
