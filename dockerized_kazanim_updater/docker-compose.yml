@@ -19,8 +19,8 @@ services:
       - MODEL_API_KEY=${MODEL_API_KEY:-rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ}
     extra_hosts:
       - "elastic.dijidemi.com:172.17.3.31"
-      - "sql.impark.local:172.17.3.31"
-      - "bcaicpu.impark.local:172.17.3.31"
+#      - "sql.impark.local:172.17.3.101"
+#      - "bcaicpu.impark.local:172.17.2.200"
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:7002/health"]
@@ -29,8 +29,8 @@ services:
       retries: 3
       start_period: 40s
     networks:
-      - kazanim-network
+      - elastic-network
 
 networks:
-  kazanim-network:
-    driver: bridge 
+  elastic-network:
+    driver: bridge
