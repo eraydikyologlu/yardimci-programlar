@@ -1,0 +1,5 @@
+pymssql
+elasticsearch
+requests
+fastapi
+uvicorn[standard] 

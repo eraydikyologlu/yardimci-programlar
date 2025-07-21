@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  kazanim-updater-api:
+    build: .
+    container_name: kazanim-updater-api
+    ports:
+      - "7002:7002"
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - kazanim-network
+
+networks:
+  kazanim-network:
+    driver: bridge 
