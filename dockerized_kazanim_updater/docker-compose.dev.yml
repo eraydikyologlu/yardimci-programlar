@@ -8,15 +8,29 @@ services:
     container_name: kazanim-updater-api-dev
     ports:
       - "7002:7002"
-    env_file:
-      - config.env
+    environment:
+      - MSSQL_SERVER=${MSSQL_SERVER}
+      - MSSQL_USER=${MSSQL_USER}
+      - MSSQL_PASSWORD=${MSSQL_PASSWORD}
+      - MSSQL_DATABASE=${MSSQL_DATABASE}
+      - ES_HOST=${ES_HOST}
+      - ES_USER=${ES_USER}
+      - ES_PASSWORD=${ES_PASSWORD}
+      - ES_INDEX=${ES_INDEX}
+      - API_HOST=${API_HOST}
+      - API_PORT=${API_PORT}
+      - MODEL_API_URL=${MODEL_API_URL}
+      - MODEL_API_KEY=${MODEL_API_KEY}
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
     volumes:
       - .:/app
       - /app/__pycache__
+    extra_hosts:
+      - "elastic.dijidemi.com:172.17.3.31"
+      - "sql.impark.local:172.17.3.31"
+      - "bcaicpu.impark.local:172.17.3.31"
     restart: unless-stopped
-    environment:
-      - PYTHONPATH=/app
-      - PYTHONUNBUFFERED=1
     networks:
       - kazanim-network
 

@@ -7,7 +7,8 @@ import uvicorn
 import os
 from dotenv import load_dotenv
 
-# Environment değişkenlerini yükle
+# Environment değişkenlerini yükle (önce .env, sonra config.env)
+load_dotenv('.env')
 load_dotenv('config.env')
 
 # ====================== FUNCTIONS ======================

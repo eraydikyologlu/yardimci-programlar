@@ -16,9 +16,10 @@ Bu proje, kazanım güncelleme işlemlerini REST API olarak sunan bir FastAPI uy
 
 ### 1. Environment Variables
 
-Proje yapılandırma dosyasından (`config.env`) çalışır. Projeyi çalıştırmadan önce kendi değerlerinizle bir yapılandırma dosyası oluşturun:
+Proje environment variables'ları kullanır. Docker ile çalıştırmadan önce `.env` dosyası oluşturun:
 
 ```bash
+# .env dosyası oluştur (config.env'den kopyala)
 cp config.env .env
 ```
 
@@ -98,7 +99,7 @@ docker build -t kazanim-updater-api .
 
 #### 2. Docker Run (Environment Variables ile)
 ```bash
-docker run -p 7002:7002 --env-file config.env kazanim-updater-api
+docker run -p 7002:7002 --env-file .env kazanim-updater-api
 ```
 
 #### 3. Docker Compose (Önerilen)
@@ -171,7 +172,7 @@ docker-compose -f docker-compose.dev.yml down
 
 # Manual Docker Build/Run
 docker build -t kazanim-updater-api .
-docker run -d -p 7002:7002 --env-file config.env --name kazanim-api kazanim-updater-api
+docker run -d -p 7002:7002 --env-file .env --name kazanim-api kazanim-updater-api
 ```
 
 ## Docker Dosya Yapısı
@@ -184,7 +185,8 @@ dockerized_kazanim_updater/
 ├── docker-compose.dev.yml  # Development compose config
 ├── .dockerignore           # Docker ignore dosyası
 ├── Makefile               # Docker komutları için kısayollar
-├── config.env             # Environment variables
+├── config.env             # Environment variables şablonu
+├── .env                   # Docker için environment variables (config.env'den kopyala)
 ├── requirements.txt       # Python dependencies
 ├── kazanim_update.py      # Ana uygulama
 └── README.md              # Dokümantasyon
@@ -200,6 +202,8 @@ dockerized_kazanim_updater/
 | `docker-compose.dev.yml` | Development ortamı compose konfigürasyonu |
 | `.dockerignore` | Docker build sırasında ignore edilecek dosyalar |
 | `Makefile` | Docker komutları için kısayollar |
+| `config.env` | Environment variables şablonu |
+| `.env` | Docker için environment variables (config.env'den kopyalanır) |
 
 ## Güvenlik Notları
 
