@@ -4,21 +4,34 @@ from elasticsearch import Elasticsearch, helpers
 from fastapi import FastAPI, HTTPException
 from typing import Optional
 import uvicorn
+import os
+from dotenv import load_dotenv
+
+# Environment değişkenlerini yükle
+load_dotenv('config.env')
 
 # ====================== FUNCTIONS ======================
 import requests
 # ====================== CONFIG ======================
 MSSQL_CONFIG = {
-    "server": "sql.impark.local",
-    "user": "enes.karatas",
-    "password": "Exkaratas2021!*",
-    "database": "olcme_db"
+    "server": os.getenv("MSSQL_SERVER", "sql.impark.local"),
+    "user": os.getenv("MSSQL_USER", "enes.karatas"),
+    "password": os.getenv("MSSQL_PASSWORD", "Exkaratas2021!*"),
+    "database": os.getenv("MSSQL_DATABASE", "olcme_db")
 }
 
-ES_HOST = "http://elastic.dijidemi.com:80"
-ES_USER = "elastic"
-ES_PASS = "123654-"
-ES_INDEX = "question_bank"
+ES_HOST = os.getenv("ES_HOST", "http://elastic.dijidemi.com:80")
+ES_USER = os.getenv("ES_USER", "elastic")
+ES_PASS = os.getenv("ES_PASSWORD", "123654-")
+ES_INDEX = os.getenv("ES_INDEX", "question_bank")
+
+# API Yapılandırması
+API_HOST = os.getenv("API_HOST", "0.0.0.0")
+API_PORT = int(os.getenv("API_PORT", "7002"))
+
+# Model API Yapılandırması
+MODEL_API_URL = os.getenv("MODEL_API_URL", "http://bcaicpu.impark.local:5005/api/kazanim_isaretleme")
+MODEL_API_KEY = os.getenv("MODEL_API_KEY", "rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ")
 
 # ====================== LOGGING ======================
 logging.basicConfig(level=logging.INFO)
@@ -42,9 +55,9 @@ def tahmin_et_kazanimid(dersId , question_content):
     if dersId is None or question_content is None:
         return 0
 
-    url = f"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme?soru_metni={question_content}&ders_id={dersId}"
+    url = f"{MODEL_API_URL}?soru_metni={question_content}&ders_id={dersId}"
     headers = {
-        "x-api-key": "rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ"
+        "x-api-key": MODEL_API_KEY
     }
 
     try:
@@ -206,4 +219,4 @@ async def health_check():
 
 # ====================== SERVER START ======================
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=7002)
+    uvicorn.run(app, host=API_HOST, port=API_PORT)

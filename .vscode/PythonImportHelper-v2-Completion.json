@@ -1,0 +1,326 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "pymssql",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pymssql",
+        "description": "pymssql",
+        "detail": "pymssql",
+        "documentation": {}
+    },
+    {
+        "label": "Elasticsearch",
+        "importPath": "elasticsearch",
+        "description": "elasticsearch",
+        "isExtraImport": true,
+        "detail": "elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "helpers",
+        "importPath": "elasticsearch",
+        "description": "elasticsearch",
+        "isExtraImport": true,
+        "detail": "elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "uvicorn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uvicorn",
+        "description": "uvicorn",
+        "detail": "uvicorn",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "mark_acquisition_api",
+        "kind": 2,
+        "importPath": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "description": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "peekOfCode": "def mark_acquisition_api():\n    # Query parametresinden book_id alınıyor\n    book_id = request.args.get('book_id')\n    if not book_id:\n        return jsonify({\"error\": \"book_id parametresi gerekli\"}), 400\n    try:\n        book_id = int(book_id)\n    except ValueError:\n        return jsonify({\"error\": \"book_id bir tam sayı olmalıdır\"}), 400\n    # API URL ve header bilgileri",
+        "detail": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "documentation": {}
+    },
+    {
+        "label": "health_check",
+        "kind": 2,
+        "importPath": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "description": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "peekOfCode": "def health_check():\n    return jsonify({\"status\": \"healthy\", \"message\": \"API çalışıyor\"}), 200\nif __name__ == \"__main__\":\n    app.run(debug=True, host='0.0.0.0', port=7001)",
+        "detail": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "description": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/mark-acquisition', methods=['GET'])\ndef mark_acquisition_api():\n    # Query parametresinden book_id alınıyor\n    book_id = request.args.get('book_id')\n    if not book_id:\n        return jsonify({\"error\": \"book_id parametresi gerekli\"}), 400\n    try:\n        book_id = int(book_id)\n    except ValueError:",
+        "detail": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "documentation": {}
+    },
+    {
+        "label": "tahmin_et_kazanimid",
+        "kind": 2,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "def tahmin_et_kazanimid(dersId , question_content):\n    if dersId is None or question_content is None:\n        return 0\n    url = f\"{MODEL_API_URL}?soru_metni={question_content}&ders_id={dersId}\"\n    headers = {\n        \"x-api-key\": MODEL_API_KEY\n    }\n    try:\n        response = requests.get(url, headers=headers, timeout=10)\n        if response.status_code == 200:",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "veritabani_kazanim_getir",
+        "kind": 2,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "def veritabani_kazanim_getir(kitap_id, test_id, soru_id):\n    try:\n        cursor.execute(\"\"\"\n            SELECT TOP 1 KazanimId \n            FROM S_CaprazGorevHistoryKazanim\n            WHERE KitapId = %s AND TestId = %s AND SoruId = %s\n              AND KazanimId IS NOT NULL AND KazanimId != 0\n        \"\"\", (kitap_id, test_id, soru_id))\n        row = cursor.fetchone()\n        return row[\"KazanimId\"] if row else None",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "kazanim_guncelle",
+        "kind": 2,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "def kazanim_guncelle(doc_id, kazanim_id):\n    try:\n        es.update(index=ES_INDEX, id=doc_id, body={\"doc\": {\"KazanimId\": kazanim_id}})\n        logger.info(f\"Güncellendi: {doc_id} → KazanimId={kazanim_id}\")\n        return True\n    except Exception as e:\n        logger.error(f\"Elastic update hatası {doc_id}: {e}\")\n        return False\ndef build_query(ders_id=None, kitap_id=None):\n    filters = [",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "build_query",
+        "kind": 2,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "def build_query(ders_id=None, kitap_id=None):\n    filters = [\n        {\n            \"bool\": {\n                \"should\": [\n                    {\"term\": {\"KazanimId\": 0}},\n                    {\"bool\": {\"must_not\": {\"exists\": {\"field\": \"KazanimId\"}}}}\n                ]\n            }\n        }",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "process_kazanim_update",
+        "kind": 2,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "def process_kazanim_update(ders_id=None, kitap_id=None):\n    \"\"\"Ana işlem fonksiyonu\"\"\"\n    query = {\n        \"query\": build_query(ders_id, kitap_id)\n    }\n    results = helpers.scan(\n        es,\n        index=ES_INDEX,\n        query=query,\n        _source=[\"DersId\", \"KitapId\", \"TestId\", \"SoruNo\", \"SoruMetin\"]",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "MSSQL_CONFIG",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "MSSQL_CONFIG = {\n    \"server\": os.getenv(\"MSSQL_SERVER\", \"sql.impark.local\"),\n    \"user\": os.getenv(\"MSSQL_USER\", \"enes.karatas\"),\n    \"password\": os.getenv(\"MSSQL_PASSWORD\", \"Exkaratas2021!*\"),\n    \"database\": os.getenv(\"MSSQL_DATABASE\", \"olcme_db\")\n}\nES_HOST = os.getenv(\"ES_HOST\", \"http://elastic.dijidemi.com:80\")\nES_USER = os.getenv(\"ES_USER\", \"elastic\")\nES_PASS = os.getenv(\"ES_PASSWORD\", \"123654-\")\nES_INDEX = os.getenv(\"ES_INDEX\", \"question_bank\")",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "ES_HOST",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "ES_HOST = os.getenv(\"ES_HOST\", \"http://elastic.dijidemi.com:80\")\nES_USER = os.getenv(\"ES_USER\", \"elastic\")\nES_PASS = os.getenv(\"ES_PASSWORD\", \"123654-\")\nES_INDEX = os.getenv(\"ES_INDEX\", \"question_bank\")\n# API Yapılandırması\nAPI_HOST = os.getenv(\"API_HOST\", \"0.0.0.0\")\nAPI_PORT = int(os.getenv(\"API_PORT\", \"7002\"))\n# Model API Yapılandırması\nMODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "ES_USER",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "ES_USER = os.getenv(\"ES_USER\", \"elastic\")\nES_PASS = os.getenv(\"ES_PASSWORD\", \"123654-\")\nES_INDEX = os.getenv(\"ES_INDEX\", \"question_bank\")\n# API Yapılandırması\nAPI_HOST = os.getenv(\"API_HOST\", \"0.0.0.0\")\nAPI_PORT = int(os.getenv(\"API_PORT\", \"7002\"))\n# Model API Yapılandırması\nMODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "ES_PASS",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "ES_PASS = os.getenv(\"ES_PASSWORD\", \"123654-\")\nES_INDEX = os.getenv(\"ES_INDEX\", \"question_bank\")\n# API Yapılandırması\nAPI_HOST = os.getenv(\"API_HOST\", \"0.0.0.0\")\nAPI_PORT = int(os.getenv(\"API_PORT\", \"7002\"))\n# Model API Yapılandırması\nMODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================\nlogging.basicConfig(level=logging.INFO)",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "ES_INDEX",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "ES_INDEX = os.getenv(\"ES_INDEX\", \"question_bank\")\n# API Yapılandırması\nAPI_HOST = os.getenv(\"API_HOST\", \"0.0.0.0\")\nAPI_PORT = int(os.getenv(\"API_PORT\", \"7002\"))\n# Model API Yapılandırması\nMODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(\"KazanimGuncelleyici\")",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "API_HOST",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "API_HOST = os.getenv(\"API_HOST\", \"0.0.0.0\")\nAPI_PORT = int(os.getenv(\"API_PORT\", \"7002\"))\n# Model API Yapılandırması\nMODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(\"KazanimGuncelleyici\")\n# ====================== FASTAPI APP ======================\napp = FastAPI(title=\"Kazanim Updater API\", version=\"1.0.0\")",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "API_PORT",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "API_PORT = int(os.getenv(\"API_PORT\", \"7002\"))\n# Model API Yapılandırması\nMODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(\"KazanimGuncelleyici\")\n# ====================== FASTAPI APP ======================\napp = FastAPI(title=\"Kazanim Updater API\", version=\"1.0.0\")\n# ====================== DB & ES CONNECTION ======================",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_API_URL",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "MODEL_API_URL = os.getenv(\"MODEL_API_URL\", \"http://bcaicpu.impark.local:5005/api/kazanim_isaretleme\")\nMODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(\"KazanimGuncelleyici\")\n# ====================== FASTAPI APP ======================\napp = FastAPI(title=\"Kazanim Updater API\", version=\"1.0.0\")\n# ====================== DB & ES CONNECTION ======================\nes = Elasticsearch(ES_HOST, basic_auth=(ES_USER, ES_PASS))\ndb = pymssql.connect(",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_API_KEY",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "MODEL_API_KEY = os.getenv(\"MODEL_API_KEY\", \"rMGgnVjOyQizdhwYRTcZuxFkIZUanumJ\")\n# ====================== LOGGING ======================\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(\"KazanimGuncelleyici\")\n# ====================== FASTAPI APP ======================\napp = FastAPI(title=\"Kazanim Updater API\", version=\"1.0.0\")\n# ====================== DB & ES CONNECTION ======================\nes = Elasticsearch(ES_HOST, basic_auth=(ES_USER, ES_PASS))\ndb = pymssql.connect(\n    server=MSSQL_CONFIG[\"server\"],",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "logger = logging.getLogger(\"KazanimGuncelleyici\")\n# ====================== FASTAPI APP ======================\napp = FastAPI(title=\"Kazanim Updater API\", version=\"1.0.0\")\n# ====================== DB & ES CONNECTION ======================\nes = Elasticsearch(ES_HOST, basic_auth=(ES_USER, ES_PASS))\ndb = pymssql.connect(\n    server=MSSQL_CONFIG[\"server\"],\n    user=MSSQL_CONFIG[\"user\"],\n    password=MSSQL_CONFIG[\"password\"],\n    database=MSSQL_CONFIG[\"database\"]",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "app = FastAPI(title=\"Kazanim Updater API\", version=\"1.0.0\")\n# ====================== DB & ES CONNECTION ======================\nes = Elasticsearch(ES_HOST, basic_auth=(ES_USER, ES_PASS))\ndb = pymssql.connect(\n    server=MSSQL_CONFIG[\"server\"],\n    user=MSSQL_CONFIG[\"user\"],\n    password=MSSQL_CONFIG[\"password\"],\n    database=MSSQL_CONFIG[\"database\"]\n)\ncursor = db.cursor(as_dict=True)",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "es",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "es = Elasticsearch(ES_HOST, basic_auth=(ES_USER, ES_PASS))\ndb = pymssql.connect(\n    server=MSSQL_CONFIG[\"server\"],\n    user=MSSQL_CONFIG[\"user\"],\n    password=MSSQL_CONFIG[\"password\"],\n    database=MSSQL_CONFIG[\"database\"]\n)\ncursor = db.cursor(as_dict=True)\ndef tahmin_et_kazanimid(dersId , question_content):\n    if dersId is None or question_content is None:",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "db = pymssql.connect(\n    server=MSSQL_CONFIG[\"server\"],\n    user=MSSQL_CONFIG[\"user\"],\n    password=MSSQL_CONFIG[\"password\"],\n    database=MSSQL_CONFIG[\"database\"]\n)\ncursor = db.cursor(as_dict=True)\ndef tahmin_et_kazanimid(dersId , question_content):\n    if dersId is None or question_content is None:\n        return 0",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "dockerized_kazanim_updater.kazanim_update",
+        "description": "dockerized_kazanim_updater.kazanim_update",
+        "peekOfCode": "cursor = db.cursor(as_dict=True)\ndef tahmin_et_kazanimid(dersId , question_content):\n    if dersId is None or question_content is None:\n        return 0\n    url = f\"{MODEL_API_URL}?soru_metni={question_content}&ders_id={dersId}\"\n    headers = {\n        \"x-api-key\": MODEL_API_KEY\n    }\n    try:\n        response = requests.get(url, headers=headers, timeout=10)",
+        "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    }
+]

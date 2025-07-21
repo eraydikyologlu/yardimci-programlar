@@ -2,19 +2,21 @@ version: '3.8'
 
 services:
   kazanim-updater-api:
-    build: .
-    container_name: kazanim-updater-api
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: kazanim-updater-api-dev
     ports:
       - "7002:7002"
     env_file:
       - config.env
+    volumes:
+      - .:/app
+      - /app/__pycache__
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7002/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
     networks:
       - kazanim-network
 

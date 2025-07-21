@@ -2,4 +2,5 @@ pymssql
 elasticsearch
 requests
 fastapi
-uvicorn[standard] 
+uvicorn[standard]
+python-dotenv 
