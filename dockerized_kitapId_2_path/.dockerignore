@@ -1,45 +1,72 @@
-# Git dosyaları
+# Git
 .git
 .gitignore
+.gitattributes
 
-# Python cache
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Environments
+.env
+.venv
 env/
 venv/
-.venv/
 ENV/
+env.bak/
+venv.bak/
 
-# IDE dosyaları
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS dosyaları
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# Log dosyaları
+# Logs
 *.log
 
-# Test dosyaları
+# Test
 .pytest_cache/
 .coverage
-.tox/
+htmlcov/
 
-# Temporary dosyalar
-*.tmp
-*.temp
-
-# Docker dosyaları
-Dockerfile*
-docker-compose*
-.dockerignore
-
-# Documentation
-README.md
-*.md 
+# Config dosyaları (production'da environment variables kullanılacak)
+config.env 
