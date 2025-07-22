@@ -7,6 +7,15 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    return jsonify({
+        'status': 'healthy',
+        'service': 'index-gap-finder',
+        'version': '1.0.0'
+    })
+
 @app.route('/eksik-kitaplar', methods=['GET'])
 def eksik_kitaplar():
     try:

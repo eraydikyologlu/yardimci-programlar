@@ -507,6 +507,15 @@
         "documentation": {}
     },
     {
+        "label": "health_check",
+        "kind": 2,
+        "importPath": "dockerized_index_gap_finder.app",
+        "description": "dockerized_index_gap_finder.app",
+        "peekOfCode": "def health_check():\n    \"\"\"Health check endpoint\"\"\"\n    return jsonify({\n        'status': 'healthy',\n        'service': 'index-gap-finder',\n        'version': '1.0.0'\n    })\n@app.route('/eksik-kitaplar', methods=['GET'])\ndef eksik_kitaplar():\n    try:",
+        "detail": "dockerized_index_gap_finder.app",
+        "documentation": {}
+    },
+    {
         "label": "eksik_kitaplar",
         "kind": 2,
         "importPath": "dockerized_index_gap_finder.app",
@@ -520,7 +529,7 @@
         "kind": 5,
         "importPath": "dockerized_index_gap_finder.app",
         "description": "dockerized_index_gap_finder.app",
-        "peekOfCode": "app = Flask(__name__)\n@app.route('/eksik-kitaplar', methods=['GET'])\ndef eksik_kitaplar():\n    try:\n        # Elastic'ten unique kitap id'lerini çek\n        es_host = os.environ.get('ES_HOST', 'http://elastic.dijidemi.com:80')\n        es_user = os.environ.get('ES_USER', 'elastic')\n        es_password = os.environ.get('ES_PASSWORD', '123654-')\n        index_name = os.environ.get('ES_INDEX', 'question_bank')\n        es = Elasticsearch(es_host, basic_auth=(es_user, es_password))",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/health', methods=['GET'])\ndef health_check():\n    \"\"\"Health check endpoint\"\"\"\n    return jsonify({\n        'status': 'healthy',\n        'service': 'index-gap-finder',\n        'version': '1.0.0'\n    })\n@app.route('/eksik-kitaplar', methods=['GET'])",
         "detail": "dockerized_index_gap_finder.app",
         "documentation": {}
     },
