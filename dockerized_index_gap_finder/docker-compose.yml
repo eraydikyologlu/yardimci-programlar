@@ -17,11 +17,11 @@ services:
       - SQL_DATABASE=${SQL_DATABASE:-olcme_db}
       - FLASK_APP=${FLASK_APP:-app.py}
       - FLASK_ENV=${FLASK_ENV:-production}
+      - FLASK_DEBUG=${FLASK_DEBUG:-false}
       - APP_HOST=${APP_HOST:-0.0.0.0}
       - APP_PORT=${APP_PORT:-7004}
     extra_hosts:
       - "elastic.dijidemi.com:172.17.3.31"
-      - "sql.impark.local:172.17.3.101"
     volumes:
       - .:/app
     restart: unless-stopped

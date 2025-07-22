@@ -92,7 +92,14 @@ def eksik_kitaplar():
             tmp_path = tmp.name
         return send_file(tmp_path, as_attachment=True, download_name="elasticte_olmayan_kitaplar.xlsx")
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        import traceback
+        error_details = {
+            "error": str(e),
+            "traceback": traceback.format_exc(),
+            "type": type(e).__name__
+        }
+        print(f"Detailed error: {error_details}")  # Console'a da yazdır
+        return jsonify(error_details), 500
     finally:
         # Geçici dosyayı sil
         try:
@@ -104,4 +111,5 @@ def eksik_kitaplar():
 if __name__ == "__main__":
     host = os.environ.get('APP_HOST', '0.0.0.0')
     port = int(os.environ.get('APP_PORT', 7004))
-    app.run(host=host, port=port) 
+    debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
+    app.run(host=host, port=port, debug=debug) 
