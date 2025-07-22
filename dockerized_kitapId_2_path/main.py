@@ -60,6 +60,6 @@ if __name__ == '__main__':
     # Web API'yi çalıştır
     app.run(
         host='0.0.0.0',
-        port=5010,
+        port=7003,
         debug=app.config['DEBUG']
     ) 

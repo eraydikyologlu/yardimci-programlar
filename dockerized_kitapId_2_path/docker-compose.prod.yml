@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: kitap-api-prod
     ports:
-      - "5010:5010"
+      - "7003:7003"
     environment:
       - FLASK_DEBUG=false
       - SECRET_KEY=${SECRET_KEY}
@@ -20,7 +20,7 @@ services:
     networks:
       - kitap-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5010/api/books/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:7003/api/books/health"]
       interval: 30s
       timeout: 10s
       retries: 3

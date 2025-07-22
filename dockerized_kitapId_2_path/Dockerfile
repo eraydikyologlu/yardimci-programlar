@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Port'u expose et
-EXPOSE 5010
+EXPOSE 7003
 
 # Uygulama kullanıcısı oluştur (güvenlik için)
 RUN useradd -m appuser && chown -R appuser:appuser /app
