@@ -511,7 +511,7 @@
         "kind": 2,
         "importPath": "dockerized_index_gap_finder.app",
         "description": "dockerized_index_gap_finder.app",
-        "peekOfCode": "def eksik_kitaplar():\n    try:\n        # Elastic'ten unique kitap id'lerini çek\n        es = Elasticsearch(\"http://elastic.dijidemi.com:80\", basic_auth=(\"elastic\", \"123654-\"))\n        index_name = \"question_bank\"\n        agg_name = \"all_unique_ids\"\n        all_ids = []\n        after_key = None\n        while True:\n            body = {",
+        "peekOfCode": "def eksik_kitaplar():\n    try:\n        # Elastic'ten unique kitap id'lerini çek\n        es_host = os.environ.get('ES_HOST', 'http://elastic.dijidemi.com:80')\n        es_user = os.environ.get('ES_USER', 'elastic')\n        es_password = os.environ.get('ES_PASSWORD', '123654-')\n        index_name = os.environ.get('ES_INDEX', 'question_bank')\n        es = Elasticsearch(es_host, basic_auth=(es_user, es_password))\n        agg_name = \"all_unique_ids\"\n        all_ids = []",
         "detail": "dockerized_index_gap_finder.app",
         "documentation": {}
     },
@@ -520,7 +520,7 @@
         "kind": 5,
         "importPath": "dockerized_index_gap_finder.app",
         "description": "dockerized_index_gap_finder.app",
-        "peekOfCode": "app = Flask(__name__)\n@app.route('/eksik-kitaplar', methods=['GET'])\ndef eksik_kitaplar():\n    try:\n        # Elastic'ten unique kitap id'lerini çek\n        es = Elasticsearch(\"http://elastic.dijidemi.com:80\", basic_auth=(\"elastic\", \"123654-\"))\n        index_name = \"question_bank\"\n        agg_name = \"all_unique_ids\"\n        all_ids = []\n        after_key = None",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/eksik-kitaplar', methods=['GET'])\ndef eksik_kitaplar():\n    try:\n        # Elastic'ten unique kitap id'lerini çek\n        es_host = os.environ.get('ES_HOST', 'http://elastic.dijidemi.com:80')\n        es_user = os.environ.get('ES_USER', 'elastic')\n        es_password = os.environ.get('ES_PASSWORD', '123654-')\n        index_name = os.environ.get('ES_INDEX', 'question_bank')\n        es = Elasticsearch(es_host, basic_auth=(es_user, es_password))",
         "detail": "dockerized_index_gap_finder.app",
         "documentation": {}
     },

@@ -11,8 +11,12 @@ app = Flask(__name__)
 def eksik_kitaplar():
     try:
         # Elastic'ten unique kitap id'lerini çek
-        es = Elasticsearch("http://elastic.dijidemi.com:80", basic_auth=("elastic", "123654-"))
-        index_name = "question_bank"
+        es_host = os.environ.get('ES_HOST', 'http://elastic.dijidemi.com:80')
+        es_user = os.environ.get('ES_USER', 'elastic')
+        es_password = os.environ.get('ES_PASSWORD', '123654-')
+        index_name = os.environ.get('ES_INDEX', 'question_bank')
+        
+        es = Elasticsearch(es_host, basic_auth=(es_user, es_password))
         agg_name = "all_unique_ids"
         all_ids = []
         after_key = None
@@ -42,7 +46,13 @@ def eksik_kitaplar():
         elastic_kitap_ids = set(all_ids)
 
         # SQL Server'dan kitapları çek
-        engine = create_engine("mssql+pymssql://muzaffer.yalcin:Impark2025!*@sql.impark.local/olcme_db")
+        sql_server = os.environ.get('SQL_SERVER', 'sql.impark.local')
+        sql_user = os.environ.get('SQL_USER', 'muzaffer.yalcin')
+        sql_password = os.environ.get('SQL_PASSWORD', 'Impark2025!*')
+        sql_database = os.environ.get('SQL_DATABASE', 'olcme_db')
+        
+        connection_string = f"mssql+pymssql://{sql_user}:{sql_password}@{sql_server}/{sql_database}"
+        engine = create_engine(connection_string)
         sql_query = """
         SELECT 
             u.Id AS UstKurumId, u.Adi AS UstKurumAdi, u.Domain,
@@ -92,4 +102,6 @@ def eksik_kitaplar():
             pass
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=7004) 
+    host = os.environ.get('APP_HOST', '0.0.0.0')
+    port = int(os.environ.get('APP_PORT', 7004))
+    app.run(host=host, port=port) 
