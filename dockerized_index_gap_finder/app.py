@@ -1,4 +1,5 @@
 from flask import Flask, send_file, jsonify
+from flask_cors import CORS
 from elasticsearch import Elasticsearch
 import pandas as pd
 from sqlalchemy import create_engine
@@ -6,6 +7,7 @@ import tempfile
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/eksik-kitaplar', methods=['GET'])
 def eksik_kitaplar():
