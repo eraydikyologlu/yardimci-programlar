@@ -24,6 +24,78 @@
         "documentation": {}
     },
     {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_file",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_file",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -42,21 +114,11 @@
         "documentation": {}
     },
     {
-        "label": "logging",
-        "kind": 6,
+        "label": "Elasticsearch",
+        "importPath": "elasticsearch",
+        "description": "elasticsearch",
         "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
-        "documentation": {}
-    },
-    {
-        "label": "pymssql",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pymssql",
-        "description": "pymssql",
-        "detail": "pymssql",
+        "detail": "elasticsearch",
         "documentation": {}
     },
     {
@@ -73,6 +135,59 @@
         "description": "elasticsearch",
         "isExtraImport": true,
         "detail": "elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "pymssql",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pymssql",
+        "description": "pymssql",
+        "detail": "pymssql",
         "documentation": {}
     },
     {
@@ -100,6 +215,110 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "uvicorn",
         "kind": 6,
         "isExtraImport": true,
@@ -109,20 +328,155 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
         "label": "load_dotenv",
         "importPath": "dotenv",
         "description": "dotenv",
         "isExtraImport": true,
         "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseService",
+        "importPath": "services.database_service",
+        "description": "services.database_service",
+        "isExtraImport": true,
+        "detail": "services.database_service",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseInterface",
+        "importPath": "services.database_service",
+        "description": "services.database_service",
+        "isExtraImport": true,
+        "detail": "services.database_service",
+        "documentation": {}
+    },
+    {
+        "label": "BookService",
+        "importPath": "services.book_service",
+        "description": "services.book_service",
+        "isExtraImport": true,
+        "detail": "services.book_service",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelExportService",
+        "importPath": "services.excel_export_service",
+        "description": "services.excel_export_service",
+        "isExtraImport": true,
+        "detail": "services.excel_export_service",
+        "documentation": {}
+    },
+    {
+        "label": "BookInfo",
+        "importPath": "models.book_models",
+        "description": "models.book_models",
+        "isExtraImport": true,
+        "detail": "models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "BookInfo",
+        "importPath": "models.book_models",
+        "description": "models.book_models",
+        "isExtraImport": true,
+        "detail": "models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "BookInfo",
+        "importPath": "models.book_models",
+        "description": "models.book_models",
+        "isExtraImport": true,
+        "detail": "models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "book_bp",
+        "importPath": "routes.book_routes",
+        "description": "routes.book_routes",
+        "isExtraImport": true,
+        "detail": "routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "init_services",
+        "importPath": "routes.book_routes",
+        "description": "routes.book_routes",
+        "isExtraImport": true,
+        "detail": "routes.book_routes",
         "documentation": {}
     },
     {
@@ -150,6 +504,33 @@
         "description": "dockerized-test-kesim-istek.test-kesim-istek-at",
         "peekOfCode": "app = Flask(__name__)\n@app.route('/mark-acquisition', methods=['GET'])\ndef mark_acquisition_api():\n    # Query parametresinden book_id alınıyor\n    book_id = request.args.get('book_id')\n    if not book_id:\n        return jsonify({\"error\": \"book_id parametresi gerekli\"}), 400\n    try:\n        book_id = int(book_id)\n    except ValueError:",
         "detail": "dockerized-test-kesim-istek.test-kesim-istek-at",
+        "documentation": {}
+    },
+    {
+        "label": "health_check",
+        "kind": 2,
+        "importPath": "dockerized_index_gap_finder.app",
+        "description": "dockerized_index_gap_finder.app",
+        "peekOfCode": "def health_check():\n    \"\"\"Health check endpoint\"\"\"\n    return jsonify({\n        'status': 'healthy',\n        'service': 'index-gap-finder',\n        'version': '1.0.0'\n    })\n@app.route('/eksik-kitaplar', methods=['GET'])\ndef eksik_kitaplar():\n    try:",
+        "detail": "dockerized_index_gap_finder.app",
+        "documentation": {}
+    },
+    {
+        "label": "eksik_kitaplar",
+        "kind": 2,
+        "importPath": "dockerized_index_gap_finder.app",
+        "description": "dockerized_index_gap_finder.app",
+        "peekOfCode": "def eksik_kitaplar():\n    try:\n        # Elastic'ten unique kitap id'lerini çek\n        es_host = os.environ.get('ES_HOST', 'http://elastic.dijidemi.com:80')\n        es_user = os.environ.get('ES_USER', 'elastic')\n        es_password = os.environ.get('ES_PASSWORD', '123654-')\n        index_name = os.environ.get('ES_INDEX', 'question_bank')\n        es = Elasticsearch(es_host, basic_auth=(es_user, es_password))\n        agg_name = \"all_unique_ids\"\n        all_ids = []",
+        "detail": "dockerized_index_gap_finder.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "dockerized_index_gap_finder.app",
+        "description": "dockerized_index_gap_finder.app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/health', methods=['GET'])\ndef health_check():\n    \"\"\"Health check endpoint\"\"\"\n    return jsonify({\n        'status': 'healthy',\n        'service': 'index-gap-finder',\n        'version': '1.0.0'\n    })\n@app.route('/eksik-kitaplar', methods=['GET'])",
+        "detail": "dockerized_index_gap_finder.app",
         "documentation": {}
     },
     {
@@ -321,6 +702,240 @@
         "description": "dockerized_kazanim_updater.kazanim_update",
         "peekOfCode": "cursor = db.cursor(as_dict=True)\ndef tahmin_et_kazanimid(dersId , question_content):\n    if dersId is None or question_content is None:\n        return 0\n    url = f\"{MODEL_API_URL}?soru_metni={question_content}&ders_id={dersId}\"\n    headers = {\n        \"x-api-key\": MODEL_API_KEY\n    }\n    try:\n        response = requests.get(url, headers=headers, timeout=10)",
         "detail": "dockerized_kazanim_updater.kazanim_update",
+        "documentation": {}
+    },
+    {
+        "label": "BookInfo",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.models.book_models",
+        "description": "dockerized_kitapId_2_path.models.book_models",
+        "peekOfCode": "class BookInfo:\n    \"\"\"Kitap bilgileri data model\"\"\"\n    id: int\n    ders_id: Optional[int]\n    ust_kurum_id: int\n    adi: str\n    seviye: Optional[str]\n    ders_adi: Optional[str]\n    path: Optional[str]\n    domain: Optional[str]",
+        "detail": "dockerized_kitapId_2_path.models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "DersInfo",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.models.book_models",
+        "description": "dockerized_kitapId_2_path.models.book_models",
+        "peekOfCode": "class DersInfo:\n    \"\"\"Ders bilgileri data model\"\"\"\n    id: int\n    seviye_id: Optional[int]\n    adi: str\n@dataclass\nclass UstKurumInfo:\n    \"\"\"Üst kurum bilgileri data model\"\"\"\n    id: int\n    kurumsalad: str",
+        "detail": "dockerized_kitapId_2_path.models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "UstKurumInfo",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.models.book_models",
+        "description": "dockerized_kitapId_2_path.models.book_models",
+        "peekOfCode": "class UstKurumInfo:\n    \"\"\"Üst kurum bilgileri data model\"\"\"\n    id: int\n    kurumsalad: str\n    domain: str\n@dataclass\nclass ZKitapAyarInfo:\n    \"\"\"ZKitap ayar bilgileri data model\"\"\"\n    kitap_id: int\n    zip_versiyon: str",
+        "detail": "dockerized_kitapId_2_path.models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "ZKitapAyarInfo",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.models.book_models",
+        "description": "dockerized_kitapId_2_path.models.book_models",
+        "peekOfCode": "class ZKitapAyarInfo:\n    \"\"\"ZKitap ayar bilgileri data model\"\"\"\n    kitap_id: int\n    zip_versiyon: str",
+        "detail": "dockerized_kitapId_2_path.models.book_models",
+        "documentation": {}
+    },
+    {
+        "label": "init_services",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "def init_services(db_config: dict):\n    \"\"\"Servisleri başlat\"\"\"\n    global database_service, book_service, excel_service\n    database_service = DatabaseService(\n        server=db_config['server'],\n        user=db_config['user'],\n        password=db_config['password'],\n        database=db_config['database']\n    )\n    book_service = BookService(database_service)",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "export_books",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "def export_books():\n    \"\"\"Kitap ID'lerini alıp Excel dosyası döndür\"\"\"\n    try:\n        # Request data'yı al\n        data = request.get_json()\n        if not data:\n            return jsonify({\n                'success': False,\n                'message': 'Request body boş olamaz'\n            }), 400",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_book_info",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "def get_book_info(kitap_id: int):\n    \"\"\"Tek kitap bilgisini Excel olarak döndür\"\"\"\n    try:\n        book = book_service.get_book_info(kitap_id)\n        if not book:\n            return jsonify({\n                'success': False,\n                'message': f'Kitap bulunamadı: ID={kitap_id}'\n            }), 404\n        # Excel dosyasını memory'de oluştur",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "validate_book_ids",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "def validate_book_ids():\n    \"\"\"Kitap ID'lerini doğrula\"\"\"\n    try:\n        data = request.get_json()\n        if not data:\n            return jsonify({\n                'success': False,\n                'message': 'Request body boş olamaz'\n            }), 400\n        kitap_ids = data.get('kitap_ids', [])",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "health_check",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "def health_check():\n    \"\"\"API sağlık kontrolü\"\"\"\n    try:\n        # Database bağlantısını test et\n        with database_service:\n            test_result = database_service.execute_single_query(\"SELECT 1 as test\")\n        if test_result:\n            return jsonify({\n                'success': True,\n                'message': 'API ve database bağlantısı çalışıyor',",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "debug_book_detailed",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "def debug_book_detailed(kitap_id: int):\n    \"\"\"Detaylı kitap debug bilgileri\"\"\"\n    try:\n        result = {\n            'kitap_id': kitap_id,\n            'tests': {}\n        }\n        # Test 1: Validate methodu\n        valid_ids = book_service.validate_book_ids([kitap_id])\n        result['tests']['validate_method'] = {",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "book_bp",
+        "kind": 5,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "book_bp = Blueprint('book', __name__, url_prefix='/api/books')\n# Global servisler (dependency injection için)\ndatabase_service = None\nbook_service = None\nexcel_service = None\ndef init_services(db_config: dict):\n    \"\"\"Servisleri başlat\"\"\"\n    global database_service, book_service, excel_service\n    database_service = DatabaseService(\n        server=db_config['server'],",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "database_service",
+        "kind": 5,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "database_service = None\nbook_service = None\nexcel_service = None\ndef init_services(db_config: dict):\n    \"\"\"Servisleri başlat\"\"\"\n    global database_service, book_service, excel_service\n    database_service = DatabaseService(\n        server=db_config['server'],\n        user=db_config['user'],\n        password=db_config['password'],",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "book_service",
+        "kind": 5,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "book_service = None\nexcel_service = None\ndef init_services(db_config: dict):\n    \"\"\"Servisleri başlat\"\"\"\n    global database_service, book_service, excel_service\n    database_service = DatabaseService(\n        server=db_config['server'],\n        user=db_config['user'],\n        password=db_config['password'],\n        database=db_config['database']",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "excel_service",
+        "kind": 5,
+        "importPath": "dockerized_kitapId_2_path.routes.book_routes",
+        "description": "dockerized_kitapId_2_path.routes.book_routes",
+        "peekOfCode": "excel_service = None\ndef init_services(db_config: dict):\n    \"\"\"Servisleri başlat\"\"\"\n    global database_service, book_service, excel_service\n    database_service = DatabaseService(\n        server=db_config['server'],\n        user=db_config['user'],\n        password=db_config['password'],\n        database=db_config['database']\n    )",
+        "detail": "dockerized_kitapId_2_path.routes.book_routes",
+        "documentation": {}
+    },
+    {
+        "label": "BookService",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.services.book_service",
+        "description": "dockerized_kitapId_2_path.services.book_service",
+        "peekOfCode": "class BookService:\n    \"\"\"Kitap işlemleri için servis sınıfı\"\"\"\n    def __init__(self, database_service: DatabaseInterface):\n        self.database_service = database_service\n        self.logger = logging.getLogger(__name__)\n    def get_book_info(self, kitap_id: int) -> Optional[BookInfo]:\n        \"\"\"Tek kitap bilgisini getir\"\"\"\n        books = self.get_books_info([kitap_id])\n        return books[0] if books else None\n    def debug_book_exists(self, kitap_id: int) -> bool:",
+        "detail": "dockerized_kitapId_2_path.services.book_service",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseInterface",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.services.database_service",
+        "description": "dockerized_kitapId_2_path.services.database_service",
+        "peekOfCode": "class DatabaseInterface(ABC):\n    \"\"\"Database işlemleri için interface\"\"\"\n    @abstractmethod\n    def connect(self) -> bool:\n        pass\n    @abstractmethod\n    def execute_query(self, query: str, params: tuple = None) -> List[Dict[str, Any]]:\n        pass\n    @abstractmethod\n    def execute_single_query(self, query: str, params: tuple = None) -> Optional[Dict[str, Any]]:",
+        "detail": "dockerized_kitapId_2_path.services.database_service",
+        "documentation": {}
+    },
+    {
+        "label": "DatabaseService",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.services.database_service",
+        "description": "dockerized_kitapId_2_path.services.database_service",
+        "peekOfCode": "class DatabaseService(DatabaseInterface):\n    \"\"\"SQL Server database bağlantı ve sorgu işlemleri\"\"\"\n    def __init__(self, server: str, user: str, password: str, database: str):\n        self.server = server\n        self.user = user\n        self.password = password\n        self.database = database\n        self.connection = None\n        self.logger = logging.getLogger(__name__)\n    def connect(self) -> bool:",
+        "detail": "dockerized_kitapId_2_path.services.database_service",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelExportService",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.services.excel_export_service",
+        "description": "dockerized_kitapId_2_path.services.excel_export_service",
+        "peekOfCode": "class ExcelExportService:\n    \"\"\"Memory-based Excel export işlemleri için servis sınıfı\"\"\"\n    def __init__(self):\n        self.logger = logging.getLogger(__name__)\n    def export_books_to_excel(self, books: List[BookInfo], filename: Optional[str] = None) -> Tuple[BytesIO, str]:\n        \"\"\"Kitap bilgilerini memory'de Excel olarak oluştur ve BytesIO + filename döndür\"\"\"\n        if not books:\n            raise ValueError(\"Export edilecek kitap bilgisi bulunamadı\")\n        if not filename:\n            timestamp = datetime.now().strftime(\"%Y%m%d_%H%M%S\")",
+        "detail": "dockerized_kitapId_2_path.services.excel_export_service",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "dockerized_kitapId_2_path.config",
+        "description": "dockerized_kitapId_2_path.config",
+        "peekOfCode": "class Config:\n    \"\"\"Uygulama konfigürasyonu\"\"\"\n    # Flask konfigürasyonu\n    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'\n    DEBUG = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'\n    # Database konfigürasyonu\n    DATABASE_CONFIG = {\n        'server': os.environ.get('DB_SERVER', 'sql.impark.local'),\n        'user': os.environ.get('DB_USER', 'enes.karatas'),\n        'password': os.environ.get('DB_PASSWORD', 'Exkaratas2021!*'),",
+        "detail": "dockerized_kitapId_2_path.config",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.main",
+        "description": "dockerized_kitapId_2_path.main",
+        "peekOfCode": "def create_app():\n    \"\"\"Flask Web API uygulamasını oluştur ve konfigüre et\"\"\"\n    app = Flask(__name__)\n    # CORS'u etkinleştir (React frontend için)\n    CORS(app)\n    # Konfigürasyonu yükle\n    app.config.from_object(Config)\n    Config.init_app(app)\n    # Servisleri başlat\n    init_services(Config.DATABASE_CONFIG)",
+        "detail": "dockerized_kitapId_2_path.main",
+        "documentation": {}
+    },
+    {
+        "label": "test_health_check",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.test_app",
+        "description": "dockerized_kitapId_2_path.test_app",
+        "peekOfCode": "def test_health_check():\n    \"\"\"API sağlık kontrolünü test et\"\"\"\n    try:\n        response = requests.get(f\"{BASE_URL}/api/books/health\")\n        print(f\"🏥 Sağlık Kontrolü: {response.status_code}\")\n        print(f\"   Yanıt: {response.json()}\")\n        return response.status_code == 200\n    except requests.ConnectionError:\n        print(\"❌ Bağlantı hatası! Flask uygulaması çalışıyor mu?\")\n        return False",
+        "detail": "dockerized_kitapId_2_path.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "test_validation",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.test_app",
+        "description": "dockerized_kitapId_2_path.test_app",
+        "peekOfCode": "def test_validation():\n    \"\"\"ID doğrulama endpoint'ini test et\"\"\"\n    test_ids = [30305, 30306, 99999]  # Son ID muhtemelen geçersiz\n    try:\n        response = requests.post(\n            f\"{BASE_URL}/api/books/validate\",\n            json={\"kitap_ids\": test_ids}\n        )\n        print(f\"\\n🔍 ID Doğrulama: {response.status_code}\")\n        result = response.json()",
+        "detail": "dockerized_kitapId_2_path.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "test_book_info",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.test_app",
+        "description": "dockerized_kitapId_2_path.test_app",
+        "peekOfCode": "def test_book_info():\n    \"\"\"Tekil kitap bilgisi endpoint'ini test et\"\"\"\n    test_id = 30305\n    try:\n        response = requests.get(f\"{BASE_URL}/api/books/info/{test_id}\")\n        print(f\"\\n📖 Kitap Bilgisi (ID: {test_id}): {response.status_code}\")\n        if response.status_code == 200:\n            result = response.json()\n            data = result['data']\n            print(f\"   Kitap Adı: {data.get('Kitap Adı', 'N/A')}\")",
+        "detail": "dockerized_kitapId_2_path.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "test_export",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.test_app",
+        "description": "dockerized_kitapId_2_path.test_app",
+        "peekOfCode": "def test_export():\n    \"\"\"Excel export endpoint'ini test et (dosya indirmez, sadece yanıt kontrol eder)\"\"\"\n    test_ids = [30305]\n    try:\n        response = requests.post(\n            f\"{BASE_URL}/api/books/export\",\n            json={\"kitap_ids\": test_ids}\n        )\n        print(f\"\\n📊 Excel Export: {response.status_code}\")\n        if response.status_code == 200:",
+        "detail": "dockerized_kitapId_2_path.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "dockerized_kitapId_2_path.test_app",
+        "description": "dockerized_kitapId_2_path.test_app",
+        "peekOfCode": "def main():\n    \"\"\"Ana test fonksiyonu\"\"\"\n    print(\"🚀 Kitap Bilgileri Export Sistemi Test Suite\")\n    print(\"=\" * 50)\n    # Test sonuçları\n    results = []\n    # Testleri çalıştır\n    results.append((\"Sağlık Kontrolü\", test_health_check()))\n    if results[0][1]:  # Sağlık kontrolü başarılıysa diğer testleri çalıştır\n        results.append((\"ID Doğrulama\", test_validation()))",
+        "detail": "dockerized_kitapId_2_path.test_app",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_URL",
+        "kind": 5,
+        "importPath": "dockerized_kitapId_2_path.test_app",
+        "description": "dockerized_kitapId_2_path.test_app",
+        "peekOfCode": "BASE_URL = \"http://localhost:5010\"\ndef test_health_check():\n    \"\"\"API sağlık kontrolünü test et\"\"\"\n    try:\n        response = requests.get(f\"{BASE_URL}/api/books/health\")\n        print(f\"🏥 Sağlık Kontrolü: {response.status_code}\")\n        print(f\"   Yanıt: {response.json()}\")\n        return response.status_code == 200\n    except requests.ConnectionError:\n        print(\"❌ Bağlantı hatası! Flask uygulaması çalışıyor mu?\")",
+        "detail": "dockerized_kitapId_2_path.test_app",
         "documentation": {}
     }
 ]

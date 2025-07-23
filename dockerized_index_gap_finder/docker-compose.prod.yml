@@ -1,19 +1,19 @@
-version: '3.8'
+version: '3.11'
 
 services:
   index-gap-finder:
     build: .
-    container_name: index-gap-finder
+    container_name: index-gap-finder-prod
     ports:
       - "7004:7004"
     environment:
       - ES_HOST=${ES_HOST:-http://elastic.dijidemi.com:80}
       - ES_USER=${ES_USER:-elastic}
-      - ES_PASSWORD=${ES_PASSWORD:-123654-}
+      - ES_PASSWORD=${ES_PASSWORD}
       - ES_INDEX=${ES_INDEX:-question_bank}
       - SQL_SERVER=${SQL_SERVER:-sql.impark.local}
       - SQL_USER=${SQL_USER:-muzaffer.yalcin}
-      - SQL_PASSWORD=${SQL_PASSWORD:-Impark2025!*}
+      - SQL_PASSWORD=${SQL_PASSWORD}
       - SQL_DATABASE=${SQL_DATABASE:-olcme_db}
       - FLASK_APP=${FLASK_APP:-app.py}
       - FLASK_ENV=${FLASK_ENV:-production}
@@ -22,17 +22,31 @@ services:
       - APP_PORT=${APP_PORT:-7004}
     extra_hosts:
       - "elastic.dijidemi.com:172.17.3.31"
-    volumes:
-      - .:/app
-    restart: unless-stopped
+      
+    restart: always
     networks:
       - elastic-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7004/eksik-kitaplar"]
-      interval: 60s
-      timeout: 30s
+      test: ["CMD", "curl", "-f", "http://localhost:7004/health"]
+      interval: 30s
+      timeout: 10s
       retries: 3
       start_period: 40s
+    # Güvenlik ve performans sınırlamaları
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+    # Production'da log sınırlaması
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
   elastic-network:

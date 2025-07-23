@@ -31,10 +31,6 @@ wheels/
 *.egg
 MANIFEST
 
-# PyInstaller
-*.manifest
-*.spec
-
 # Environments
 .env
 .venv
@@ -69,4 +65,8 @@ Thumbs.db
 htmlcov/
 
 # Config dosyaları (production'da environment variables kullanılacak)
-config.env 
+config.env
+
+# Excel files (temporary)
+*.xlsx
+*.xls 
