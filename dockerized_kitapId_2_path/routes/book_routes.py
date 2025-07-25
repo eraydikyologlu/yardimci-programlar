@@ -32,7 +32,7 @@ def init_services(db_config: dict):
 
 @book_bp.route('/export', methods=['POST'])
 def export_books():
-    """Kitap ID'lerini alıp Excel dosyası döndür"""
+    """Kitap ID'lerini alıp JSON data döndür"""
     try:
         # Request data'yı al
         data = request.get_json()
@@ -84,17 +84,26 @@ def export_books():
                 'message': 'Kitap bilgileri alınamadı'
             }), 500
         
-        # Excel dosyasını memory'de oluştur
-        filename = excel_service.get_export_filename(valid_ids)
-        excel_buffer, filename = excel_service.export_books_to_excel(books, filename)
+        # Kitap bilgilerini JSON formatına çevir
+        books_data = []
+        for book in books:
+            if book:
+                books_data.append(book.to_dict())
         
-        # Memory buffer'dan dosyayı döndür
-        return send_file(
-            excel_buffer,
-            as_attachment=True,
-            download_name=filename,
-            mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-        )
+        # JSON response döndür
+        return jsonify({
+            'success': True,
+            'data': {
+                'books': books_data,
+                'summary': {
+                    'total_requested': len(kitap_ids),
+                    'total_valid': len(valid_ids),
+                    'total_invalid': len(invalid_ids),
+                    'valid_ids': valid_ids,
+                    'invalid_ids': invalid_ids
+                }
+            }
+        })
         
     except Exception as e:
         logging.error(f"Export hatası: {str(e)}")
